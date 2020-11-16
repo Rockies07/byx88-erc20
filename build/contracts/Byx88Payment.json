@@ -7626,6 +7626,121 @@
     "version": "0.6.12+commit.27d51765.Emscripten.clang"
   },
   "networks": {
+    "1": {
+      "events": {
+        "0x9aecf86140d81442289f667eb72e1202a8fbb3478a686659952e145e85319656": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            }
+          ],
+          "name": "ChangeOwner",
+          "type": "event"
+        },
+        "0x5c10bf01e38ccbf6b741c50b2c4ef931cac91b18608c55b7530806441484cb51": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "DepositInit",
+          "type": "event"
+        },
+        "0x045b758a1c3a7f4b1cecf439a11c6bd369a54dd393cfa9f8075fc3723354673e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "FillBalance",
+          "type": "event"
+        },
+        "0x9d434160922b3be2ebb540e22251e55f8a180264254d73b5e8179ad541997ace": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            }
+          ],
+          "name": "Revert",
+          "type": "event"
+        },
+        "0xd69eabfc802f58b2a23d16767d1fcab6551f30a60ab43a24f147d3823d7d0368": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address payable",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "Take",
+          "type": "event"
+        },
+        "0x9da6493a92039daf47d1f2d7a782299c5994c6323eb1e972f69c432089ec52bf": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "ref",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "Withdraw",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xA0D4448424c9C8EB324fA20c53Abb7df107C3D44",
+      "transactionHash": "0x1e1c6e9f8e2a6277ee198d78d3b20c1cbb959b8cdcfcce412e81ad6edecacb87"
+    },
     "3": {
       "events": {
         "0x9aecf86140d81442289f667eb72e1202a8fbb3478a686659952e145e85319656": {
@@ -7740,6 +7855,121 @@
       "links": {},
       "address": "0xA9D7886d6dffB168aceFB311aB4043d87dddfE03",
       "transactionHash": "0x960af6a0cf63c9942469bd20f04ee45ba6b8034614ba71e8343e1955a7dd0a1e"
+    },
+    "42": {
+      "events": {
+        "0x9aecf86140d81442289f667eb72e1202a8fbb3478a686659952e145e85319656": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            }
+          ],
+          "name": "ChangeOwner",
+          "type": "event"
+        },
+        "0x5c10bf01e38ccbf6b741c50b2c4ef931cac91b18608c55b7530806441484cb51": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "DepositInit",
+          "type": "event"
+        },
+        "0x045b758a1c3a7f4b1cecf439a11c6bd369a54dd393cfa9f8075fc3723354673e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "FillBalance",
+          "type": "event"
+        },
+        "0x9d434160922b3be2ebb540e22251e55f8a180264254d73b5e8179ad541997ace": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            }
+          ],
+          "name": "Revert",
+          "type": "event"
+        },
+        "0xd69eabfc802f58b2a23d16767d1fcab6551f30a60ab43a24f147d3823d7d0368": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address payable",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "Take",
+          "type": "event"
+        },
+        "0x9da6493a92039daf47d1f2d7a782299c5994c6323eb1e972f69c432089ec52bf": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "ref",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "Withdraw",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x8f081d846069b79813F1dD31ba1dC5167ca6f55c",
+      "transactionHash": "0x5322cf9023a7128b0603b0d82d27b39d3f967409794615fa868cd9b888400d5f"
     },
     "5777": {
       "events": {
@@ -7858,7 +8088,7 @@
     }
   },
   "schemaVersion": "3.3.1",
-  "updatedAt": "2020-11-13T05:22:56.650Z",
+  "updatedAt": "2020-11-16T17:23:43.584Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
