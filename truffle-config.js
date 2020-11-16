@@ -1,11 +1,13 @@
 /**
  * @author Billy Editiano (bllyanos)
  */
-
+const Web3 = require("web3");
+const web3 = new Web3();
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const fs = require('fs');
 const pkey = fs.readFileSync("./secret/byx88-private.key").toString().trim();
 const infuraKey = fs.readFileSync("./secret/infura.key").toString().trim();
+const etherscankey = fs.readFileSync("./secret/etherscan-api.key").toString().trim();
 
 module.exports = {
   /**
@@ -40,6 +42,24 @@ module.exports = {
       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     },
+    kovan: {
+      provider: () => new HDWalletProvider(pkey, `https://kovan.infura.io/v3/${infuraKey}`),
+      network_id: 42,
+      gas: 1200000,
+      gasPrice: web3.utils.toWei("30", "gwei"),
+      confirmations: 2,
+      timeoutBlocks: 100,
+      skipDryRun: true
+    },
+    mainnet: {
+      provider: () => new HDWalletProvider(pkey, `https://mainnet.infura.io/v3/${infuraKey}`),
+      network_id: 1,
+      gas: 1200000,
+      gasPrice: web3.utils.toWei("25", "gwei"),
+      confirmations: 2,
+      timeoutBlocks: 100,
+      skipDryRun: true
+    }
     // private: {
     // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),
     // network_id: 2111,   // This network is yours, in the cloud.
@@ -62,4 +82,10 @@ module.exports = {
       // }
     },
   },
+  plugins: [
+    'truffle-plugin-verify'
+  ],
+  api_keys: {
+    etherscan: etherscankey
+  }
 };
