@@ -116,16 +116,27 @@ contract("ByxPayment", accounts => {
   /** Transfer Ownership */
   describe("Transfer Ownership", () => {
     it("should transfers the ownership", async () => {
-      const [oldOwner, newOwner] = accounts;
+      const [oldOwner, newOwner, dummyAccount] = accounts;
       const contractOwner = await payment.owner();
 
       expect(contractOwner).to.equal(oldOwner);
 
       // transfer to new Owner
-      const transferOwnershipRes = await payment.transferOwnership(newOwner);
+      const transferOwnershipRes = await payment.transferOwnership(newOwner, { from: oldOwner });
 
       const updatedContractOwner = await payment.owner();
       expect(updatedContractOwner).to.equal(newOwner);
+
+      async function testWithdrawNew() {
+        await payment.withdraw(1, dummyAccount, "1000000", { from: newOwner });
+      }
+
+      async function testWithdrawOld() {
+        await payment.withdraw(1, dummyAccount, "1000000", { from: oldOwner });
+      }
+
+      await expect(testWithdrawNew()).to.eventually.be.fulfilled;
+      await expect(testWithdrawOld()).to.eventually.be.rejected;
     });
   });
 });
